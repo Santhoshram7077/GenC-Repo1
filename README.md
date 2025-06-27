@@ -4,8 +4,9 @@
 1.  [Overview](#1-overview)
 2.  [Features](#2-features)
 3.  [Technologies Used](#3-technologies-used)
-4.  [Architecture Diagram](#4-architecture-diagram)
-5.  [Module Overview](#5-module-overview)
+4.  [Prerequisites](#4-prerequisites)
+5.  [Architecture Diagram](#5-architecture-diagram)
+6.  [Module Overview](#6-module-overview)
     * [Product Management Module](#product-management-module)
     * [Shopping Cart Module](#shopping-cart-module)
     * [Order Management Module](#order-management-module)
@@ -13,17 +14,14 @@
     * [Admin Dashboard Module](#admin-dashboard-module)
     * [API Gateway](#api-gateway)
     * [Discovery Server(Eureka)](#discovery-servereureka)
-6.  [Deployment Strategy](#6-deployment-strategy)
+7.  [Deployment Strategy](#7-deployment-strategy)
     * [Local Deployment](#local-deployment)
-7.  [Database Design](#7-database-design)
+8.  [Database Design](#8-database-design)
     * [Tables and Relationships](#tables-and-relationships)
-8.  [User Interface Design](#8-user-interface-design)
+9.  [User Interface Design](#9-user-interface-design)
     * [Wireframes](#wireframes)
-9.  [Module Setup Instructions](#9-module-setup-instructions)
-    * [Frontend (React)](#frontend-react)
-    * [Backend (Spring Boot)](#backend-spring-boot)
-    * [Database](#database)
-10. [Testing](#10-testing)
+10.  [Module Setup Instructions](#10-module-setup-instructions)
+11. [Testing](#11-testing)
     * [Unit Testing](#unit-testing)
 
 ---
@@ -44,7 +42,18 @@ This E-Commerce Platform allows users to browse products, manage shopping carts,
 - **Database**: MySQL
 - **Architecture**: REST API-based architecture
 
-## 4. Architecture Diagram
+## 4. Prerequisites
+
+Before setting up and running this project, ensure you have the following installed and configured:
+
+### 🧰 System Requirements
+- **Java 17+** – Required for Spring Boot microservices
+- **Node.js 18+** – Required for React frontend
+- **Maven 3.8+** – For building Java projects
+- **MySQL 8+** – Relational database for services
+- **Git** – For version control
+
+## 5. Architecture Diagram
 ```mermaid
 graph TD
 
@@ -124,19 +133,25 @@ graph TD
     style PaymentService fill:#e8f5e9,color:#1b5e20,stroke:#333,stroke-width:2px;
 ```
 
-## 5. Module Overview
+## 6. Module Overview
 
-### [Product Management Module](https://github.com/Santhoshram7077/E-Commerce/blob/main/README.md)
+### Product Management Module
 - **Features**: Manage product listings, including creation, updates, and categorization.
 - **Entities**: Product (ProductID, Name, Description, Price, Category, ImageURL)
+
+   [Product Management Module](https://github.com/Santhoshram7077/E-Commerce/blob/main/README.md)
 
 ### Shopping Cart Module
 - **Features**: Add/remove products to/from the shopping cart, view items and total price.
 - **Entities**: CartItem (CartItemID, ProductID, Quantity, TotalPrice)
 
+   [Shopping Cart Module](https://github.com/ACHYUTH-S-11/E_Commerce/blob/main/README.md)
+
 ### Order Management Module
 - **Features**: Place orders with shipping details, payment processing.
 - **Entities**: Order (OrderID, UserID, TotalPrice, ShippingAddress, OrderStatus, PaymentStatus)
+
+   [Order Management Module](https://github.com/amritanshusingh2/order-management-module/blob/main/order-management-module/README.md)
 
 ### User Authentication and Profile Management Module
 - **Features**: User registration and login functionality, profile updates.
@@ -150,17 +165,17 @@ graph TD
 - Provides a unified entry point to route incoming client requests to appropriate microservices.
 - Also handles load balancing, logging, and cross-cutting concerns.
 
-### Discovey Server(Eureka)
+### Discovery Server(Eureka)
 - Acts as a service registry where all microservices register themselves.
 - Enables dynamic service discovery and communication within the ecosystem. 
 
-## 6. Deployment Strategy
+## 7. Deployment Strategy
 ### Local Deployment
 - **Frontend**: Served using local servers (e.g., `npm start` for React).
 - **Backend**: Deployed locally using Spring Boot.
 - **Database**: Local instance of MySQL for testing.
 
-## 7. Database Design
+## 8. Database Design
 ### Tables and Relationships
 - **Product**: Primary Key: ProductID
 - **User**: Primary Key: UserID
@@ -168,7 +183,7 @@ graph TD
 - **Order**: Primary Key: OrderID, Foreign Key: UserID
 - **Admin**: Primary Key: AdminID
 
-## 8. User Interface Design
+## 9. User Interface Design
 ### Wireframes
 - Product Listing Page
 - Shopping Cart Page
@@ -176,8 +191,8 @@ graph TD
 - User Profile Management Page
 - Admin Dashboard
 
-## 9. Module Setup Instructions
-### Frontend (React)
+## 10. Module Setup Instructions
+### Frontend(React)
 1. **Install Dependencies**:
     ```bash
     npm install
@@ -187,7 +202,7 @@ graph TD
     npm start
     ```
 
-### Backend (Spring Boot)
+### Backend(Spring Boot)
 1. **Build Project**:
     ```bash
     mvn clean install
@@ -202,7 +217,7 @@ graph TD
     - Create a MySQL database instance.
     - Configure database connection settings in the backend application properties.
 
-## 10. Testing
+## 11. Testing
 ### Unit Testing
 - **Frontend**: Use Jest and React Testing Library.
     ```bash
