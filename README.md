@@ -157,6 +157,8 @@ graph TD
 - **Features**: User registration and login functionality, profile updates.
 - **Entities**: User (UserID, Name, Email, Password, ShippingAddress, PaymentDetails)
 
+   [User Authentication and Profile Management Module](https://github.com/yadavkamal081/E-Commerce/blob/main/README.md)
+
 ### Admin Dashboard Module
 - **Features**: Manage products, view order statuses, customer details, generate sales analytics and reports.
 - **Entities**: Admin (AdminID, Name, Role, Permissions)
